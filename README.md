@@ -1,4 +1,4 @@
-﻿# test-simple-stock-flow-tool
+# test-simple-stock-flow-tool
 
 > **Prueba tÃ©cnica Â· Ficha ADSO 3413974**  
 > Herramienta cliente para sembrado de datos de demostraciÃ³n vÃ­a API REST.

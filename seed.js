@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Sembrador de datos vÃ­a API REST (Cliente HTTP puro)
  * Cumple con la regla de arquitectura: NUNCA se conecta directamente a la base de datos MySQL.
  */
