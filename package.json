@@ -4,7 +4,8 @@
   "description": "Utilidad de demostración y sembrado de datos vía API HTTP para Simple Stock Flow",
   "type": "module",
   "scripts": {
-    "seed": "node seed.js"
+    "seed": "node seed.js",
+    "test": "node verify_scenarios.js"
   },
   "dependencies": {}
 }
