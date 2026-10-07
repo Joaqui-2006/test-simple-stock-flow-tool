@@ -1,0 +1,10 @@
+﻿{
+  "name": "test-simple-stock-flow-tool",
+  "version": "1.0.0",
+  "description": "Utilidad de demostraciÃ³n y sembrado de datos vÃ­a API HTTP para Simple Stock Flow",
+  "type": "module",
+  "scripts": {
+    "seed": "node seed.js"
+  },
+  "dependencies": {}
+}

@@ -1,45 +1,29 @@
-# test-simple-stock-flow-tool
+﻿# test-simple-stock-flow-tool
 
-> **Prueba técnica · Ficha ADSO 3413974**
-> Horario: de **9:00 a. m. a 3:00 p. m.** (15:00)
+> **Prueba tÃ©cnica Â· Ficha ADSO 3413974**  
+> Herramienta cliente para sembrado de datos de demostraciÃ³n vÃ­a API REST.
 
-Este repositorio guarda las **utilidades** de *Simple Stock Flow*: el sembrador de datos de demostración, que usa la API. **Empieza vacío a propósito**: se construye en el fork de cada aprendiz.
+---
 
-## Instrucciones
+### 1. QuÃ© es esto
+Es un cliente HTTP de utilidades que puebla automÃ¡ticamente el catÃ¡logo de *Simple Stock Flow* con productos, vendedores y ventas de demostraciÃ³n. Por restricciÃ³n de arquitectura innegociable, **nunca se conecta directamente a la base de datos MySQL**: realiza todas sus operaciones interactuando de forma legÃ­tima contra los endpoints de la API (`/api/auth/*`, `/api/products`, `/api/sales`).
 
-Cada aprendiz debe **crear el fork** de los seis repositorios del proyecto y **resolver el proyecto
-con el spec planteado**.
+### 2. CÃ³mo se levanta
+AsegÃºrate de que la API estÃ© corriendo en `http://localhost:8000`. Luego ejecuta:
+```bash
+# Ejecutar el sembrador de datos
+npm run seed
+```
+O indicando una URL personalizada:
+```bash
+API_URL=http://localhost:8000 node seed.js
+```
 
-1. Hacer fork, a su cuenta de GitHub, de cada repositorio de la tabla del final.
-2. Leer el spec en [`test-simple-stock-flow-docs`](https://github.com/code-sena/test-simple-stock-flow-docs).
-   Se entrega en dos versiones: `spec-python/` y `spec-.net/`.
-3. Desarrollar en los forks.
+### 3. DÃ³nde estÃ¡n los datos
+Este repositorio no almacena datos locales. Todos los datos sembrados se transmiten vÃ­a HTTP hacia la base de datos de la API de *Simple Stock Flow*.
 
-## El reto se desarrolla con React y PHP (Laravel)
+### 4. CÃ³mo se prueba
+Ejecuta el script `npm run seed` contra una API activa y verifica en la terminal que imprima los checks verdes (`âœ“`) de autenticaciÃ³n, alta de productos y venta registrada.
 
-El spec está escrito para Python y para .NET, pero el reto **no** se hace en esos lenguajes:
-
-| Capa | Tecnología del reto |
-|---|---|
-| Frontend | React |
-| Backend | PHP con Laravel |
-
-Lo que el spec define sobre el negocio —historias, criterios de aceptación, reglas, contrato de la
-API, modelo de datos— se respeta. Lo que define sobre la tecnología se traduce a React y Laravel.
-
-## La prueba no consiste en escribir el código
-
-El propósito principal es ver la **capacidad de desempeño con SDD** (*Spec-Driven Development*,
-desarrollo guiado por especificación): cómo se lee, se interpreta y se aplica una especificación
-para llevarla a un stack distinto. El código es el medio, no el fin.
-
-## Los seis repositorios
-
-| Repositorio | Qué va ahí |
-|---|---|
-| [`test-simple-stock-flow-docs`](https://github.com/code-sena/test-simple-stock-flow-docs) | El spec: `spec-python/` y `spec-.net/` |
-| [`test-simple-stock-flow-api`](https://github.com/code-sena/test-simple-stock-flow-api) | Backend en PHP (Laravel) |
-| [`test-simple-stock-flow-app`](https://github.com/code-sena/test-simple-stock-flow-app) | Frontend en React |
-| [`test-simple-stock-flow-page`](https://github.com/code-sena/test-simple-stock-flow-page) | Sitio público estático de presentación |
-| [`test-simple-stock-flow-infra`](https://github.com/code-sena/test-simple-stock-flow-infra) | Contenedores, red, volúmenes y motor de base de datos vacío |
-| [`test-simple-stock-flow-tool`](https://github.com/code-sena/test-simple-stock-flow-tool) | Utilidades: sembrador de datos de demostración |
+### 5. QuÃ© falta
+La herramienta cubre completamente el sembrado de categorÃ­as, usuarios, productos y ventas de demostraciÃ³n segÃºn la especificaciÃ³n.
