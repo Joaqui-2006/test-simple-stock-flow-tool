@@ -1,15 +1,15 @@
 # test-simple-stock-flow-tool
 
-> **Prueba tÃ©cnica Â· Ficha ADSO 3413974**  
-> Herramienta cliente para sembrado de datos de demostraciÃ³n vÃ­a API REST.
+> **Prueba técnica · Ficha ADSO 3413974**  
+> Herramienta cliente para sembrado de datos de demostración vía API REST.
 
 ---
 
-### 1. QuÃ© es esto
-Es un cliente HTTP de utilidades que puebla automÃ¡ticamente el catÃ¡logo de *Simple Stock Flow* con productos, vendedores y ventas de demostraciÃ³n. Por restricciÃ³n de arquitectura innegociable, **nunca se conecta directamente a la base de datos MySQL**: realiza todas sus operaciones interactuando de forma legÃ­tima contra los endpoints de la API (`/api/auth/*`, `/api/products`, `/api/sales`).
+### 1. Qué es esto
+Es un cliente HTTP de utilidades que puebla automáticamente el catálogo de *Simple Stock Flow* con productos, vendedores y ventas de demostración. Por restricción de arquitectura innegociable, **nunca se conecta directamente a la base de datos MySQL**: realiza todas sus operaciones interactuando de forma legítima contra los endpoints de la API (`/api/auth/*`, `/api/products`, `/api/sales`).
 
-### 2. CÃ³mo se levanta
-AsegÃºrate de que la API estÃ© corriendo en `http://localhost:8000`. Luego ejecuta:
+### 2. Cómo se levanta
+Asegúrate de que la API esté corriendo en `http://localhost:8000`. Luego ejecuta:
 ```bash
 # Ejecutar el sembrador de datos
 npm run seed
@@ -19,11 +19,11 @@ O indicando una URL personalizada:
 API_URL=http://localhost:8000 node seed.js
 ```
 
-### 3. DÃ³nde estÃ¡n los datos
-Este repositorio no almacena datos locales. Todos los datos sembrados se transmiten vÃ­a HTTP hacia la base de datos de la API de *Simple Stock Flow*.
+### 3. Dónde están los datos
+Este repositorio no almacena datos locales. Todos los datos sembrados se transmiten vía HTTP hacia la base de datos de la API de *Simple Stock Flow*.
 
-### 4. CÃ³mo se prueba
-Ejecuta el script `npm run seed` contra una API activa y verifica en la terminal que imprima los checks verdes (`âœ“`) de autenticaciÃ³n, alta de productos y venta registrada.
+### 4. Cómo se prueba
+Ejecuta el script `npm run seed` contra una API activa y verifica en la terminal que imprima los checks verdes (`✓`) de autenticación, alta de productos y venta registrada.
 
-### 5. QuÃ© falta
-La herramienta cubre completamente el sembrado de categorÃ­as, usuarios, productos y ventas de demostraciÃ³n segÃºn la especificaciÃ³n.
+### 5. Qué falta
+La herramienta cubre completamente el sembrado de categorías, usuarios, productos y ventas de demostración según la especificación.
